@@ -1,0 +1,592 @@
+  <!doctype html>
+<html lang="en">
+  <head>
+    <title>
+      red box game
+    </title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+ @media(max-width:500px){
+ .div{
+ background-color: black;
+ width: 20px;
+ height: 20px;
+ margin:0px;
+ border: 0.5px solid gray;
+ border-radius: 0%
+ }
+ .gues{
+   position:relative;
+   left:25vw;
+ }
+ .flex{
+   display: flex;
+ }
+ button{
+   font-size:30px;
+ }
+ .sty{
+   
+  background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIMZB3U7KdqDEsnHHnXhLwcYTfWvSD1xDCOQ&usqp=CAU");
+   background-size:cover;
+   background-repeat:no-repeat;
+ }
+ #ol{
+   color:white;
+ }
+ #over{
+   font-size:40px;
+   font-weight:bold;
+   font-family: sans-serif;
+   color:white;
+ }
+ }
+  @media(min-width:510px){
+ .div{
+ background-color: black;
+ width: 20px;
+ height: 20px;
+ margin:0px;
+ border: 0.5px solid gray;
+ border-radius: 0%
+ }
+ .gues{
+   position:relative;
+   left:25vw;
+ }
+ .flex{
+   display: flex;
+ }
+ button{
+   font-size:30px;
+ }
+ .sty{
+   
+  background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIMZB3U7KdqDEsnHHnXhLwcYTfWvSD1xDCOQ&usqp=CAU");
+   background-size:cover;
+   background-repeat:no-repeat;
+ }
+ #ol{
+   color:white;
+ }
+ #over{
+   font-size:40px;
+   font-weight:bold;
+   font-family: sans-serif;
+   color:white;
+ }
+ }
+ </style>
+ 
+</head> 
+ 
+ <body>
+<button onclick="red()" >Start game</button>
+<div id="over"></div>
+ <div id="block"></div>
+ <div class="flex">
+ <div class="div"></div>
+ <div class="div"></div>
+ <div class="div"></div>
+ <div class="div"></div>
+ <div class="div"></div>
+ <div class="div"></div>
+ <div class="div"></div>
+ <div class="div"></div>
+ <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div> </div>
+  <div class="flex">
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+    <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div></div>
+   <div class="flex">
+     <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div>   </div> <div class="flex">
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div> </div> <div class="flex">
+       <div class="div"></div>
+       <div class="div"></div>
+       <div class="div"></div>
+       <div class="div"></div>
+       <div class="div"></div>
+       <div class="div"></div>
+       <div class="div"></div>
+       <div class="div"></div>
+       <div class="div"></div>
+       <div class="div"></div>
+       <div class="div"></div>
+       <div class="div"></div>
+       <div class="div"></div>
+       <div class="div"></div> </div>
+      <div class="flex">
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div> </div>
+ <div class="flex">
+   <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div>
+   <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div>
+     <div class="div"></div> 
+ </div>
+ <br><br>
+ <div class="gues">
+ <button onclick="up()" style="margin-left:65px; width:50px; height:50px;">^</button>
+ <div style="display:flex;">
+   <button onclick="left()"><==</button>
+ 
+ <button onclick="down()" style="transform:rotate(90deg); width:50px; height:50px;">></button>
+   <button onclick="move()">==></button>
+ 
+ </div>
+ 
+ </div>
+ 
+ <ol id="ol"><li>There is a trap somewhere
+ <li>Don't let the number of red boxes reacb 30 </li></ol>
+ <br><br><br><br>
+ <br><br><br><br>
+ <br><br><br><br>
+ <br><br><br><br>
+ <br><br><br><br>
+ <br><br><br><br>
+<script>
+let div= document.getElementsByClassName("div")
+//for(let i=0;i<div.length;i++){
+let  flex= document.getElementsByClassName("flex");
+ let fle=flex.item(0).children
+let fle1=flex.item(1).children
+let fle2=flex.item(2).children
+let fle3=flex.item(3).children
+let fle4=flex.item(4).children
+let fle5=flex.item(5).children
+let fle6=flex.item(6).children
+
+//let i=Math.ceil(Math.random()*6)
+let b=Math.ceil(Math.random()*div.length)
+ div.item(b).setAttribute("style", "background:green;")
+let bb=b
+/*
+*/
+function down() {
+  let g =b%14
+   let i= parseInt(b/14)
+  flex.item(i).children.item(g).setAttribute("style", "background:black;")
+
+  
+  if (i== 6) {
+    i = 0
+    flex.item(i).children.item(g).setAttribute("style", "background:green;")
+
+  }
+  
+  else {
+    i++
+    flex.item(i).children.item(g).setAttribute("style", "background:green;")
+
+  }
+  
+  if(b<84){
+b=b+14
+}
+else{
+  b=b-84
+}
+}
+
+
+
+
+function up() {
+  let g = b % 14
+  let i = parseInt(b / 14)
+  flex.item(i).children.item(g).setAttribute("style", "background:black;")
+
+
+  if (i == 0) {
+    i = 6
+    flex.item(i).children.item(g).setAttribute("style", "background:green;")
+
+  }
+
+  else {
+    i--
+    flex.item(i).children.item(g).setAttribute("style", "background:green;")
+
+  }
+
+  if (b > 14) {
+    b = b - 14
+  }
+  else {
+    b = b +84
+  }
+}
+//////////////////////////
+function move(){
+  
+  if(b >= 0 && b <=13){
+    fle.item(b).setAttribute("style", "background:black;")
+  
+    b++
+    if(b == 13){
+      b = 0
+    }
+    fle.item(b).setAttribute("style", "background:green;")
+  }
+  
+ else if(b>=14 && b<=27){
+   let z=b
+   b-=14
+fle1.item(b).setAttribute("style", "background:black;");
+
+    b++
+    if(z==27){
+      b = 14
+      fle1.item(0).setAttribute("style", "background:green;")
+    }
+    else{
+ fle1.item(b).setAttribute("style", "background:green;")
+ b=z+1
+    }
+  }
+  
+ 
+  /*
+  */
+  else if(b>=28 && b<=41){
+   let c=b
+   b-=28
+fle2.item(b).setAttribute("style", "background:black;");
+
+    b++
+    if(c==41){
+      b = 28
+      fle2.item(0).setAttribute("style", "background:green;")
+    }
+    else{
+ fle2.item(b).setAttribute("style", "background:green;")
+ b=c+1
+    }
+  }
+  
+  else if(b >= 42 && b<=55){
+    let c = b
+  b-=42
+fle3.item(b).setAttribute("style", "background:black;");
+  
+    b++
+    if (c == 55) {
+      b = 42
+      fle3.item(0).setAttribute("style", "background:green;")
+    }
+    else {
+      fle3.item(b).setAttribute("style", "background:green;")
+      b = c + 1
+    }
+  }
+  
+  
+  
+  
+  
+  
+ else if(b >= 56 && b<=69){
+    let c = b
+  b-=56
+fle4.item(b).setAttribute("style", "background:black;");
+  
+    b++
+    if (c == 69) {
+      b = 56
+      fle4.item(0).setAttribute("style", "background:green;")
+    }
+    else {
+      fle4.item(b).setAttribute("style", "background:green;")
+      b = c + 1
+    }
+  }
+  
+  
+  
+  else if (b >= 70 && b <= 83) {
+    let c = b
+    b -= 70
+    fle5.item(b).setAttribute("style", "background:black;");
+  
+    b++
+    if (c == 83) {
+      b = 70
+      fle5.item(0).setAttribute("style", "background:green;")
+    }
+    else {
+      fle5.item(b).setAttribute("style", "background:green;")
+      b = c + 1
+    }
+  }
+ 
+ 
+ 
+ else if (b >= 84 && b <= 97) {
+    let c = b
+    b -= 84
+    fle6.item(b).setAttribute("style", "background:black;");
+  
+    b++
+    if (c == 97) {
+      b = 84
+      fle6.item(0).setAttribute("style", "background:green;")
+    }
+    else {
+      fle6.item(b).setAttribute("style", "background:green;")
+      b = c + 1
+    }
+  }
+ 
+
+
+
+}
+
+
+
+
+
+
+function left(){
+  
+  if(b >= 0 && b <=13){
+    fle.item(b).setAttribute("style", "background:black;")
+  
+    b--
+    if(b == 0){
+      b = 13
+    }
+    fle.item(b).setAttribute("style", "background:green;")
+  }
+  
+ else if(b>=14 && b<=27){
+   let z=b
+   b-=14
+fle1.item(b).setAttribute("style", "background:black;");
+
+    b--
+    if(z==14){
+      b = 27
+      fle1.item(13).setAttribute("style", "background:green;")
+    }
+    else{
+ fle1.item(b).setAttribute("style", "background:green;")
+ b=z-1
+    }
+  }
+  
+ 
+  /*
+  */
+  else if(b>=28 && b<=41){
+   let c=b
+   b-=28
+fle2.item(b).setAttribute("style", "background:black;");
+
+    b--
+    if(c==28){
+      b = 41
+      fle2.item(13).setAttribute("style", "background:green;")
+    }
+    else{
+ fle2.item(b).setAttribute("style", "background:green;")
+ b=c-1
+    }
+  }
+  
+  else if(b >= 42 && b<=55){
+    let c = b
+  b-=42
+fle3.item(b).setAttribute("style", "background:black;");
+  
+    b--
+    if (c == 42) {
+      b = 55
+      fle3.item(13).setAttribute("style", "background:green;")
+    }
+    else {
+      fle3.item(b).setAttribute("style", "background:green;")
+      b = c - 1
+    }
+  }
+  
+  
+  
+  
+  
+  
+ else if(b >= 56 && b<=69){
+    let c = b
+  b-=56
+fle4.item(b).setAttribute("style", "background:black;");
+  
+    b--
+    if (c == 56) {
+      b = 69
+      fle4.item(13).setAttribute("style", "background:green;")
+    }
+    else {
+      fle4.item(b).setAttribute("style", "background:green;")
+      b = c - 1
+    }
+  }
+  
+  
+  
+  else if (b >= 70 && b <= 83) {
+    let c = b
+    b -= 70
+    fle5.item(b).setAttribute("style", "background:black;");
+  
+    b--
+    if (c == 70) {
+      b = 83
+      fle5.item(13).setAttribute("style", "background:green;")
+    }
+    else {
+      fle5.item(b).setAttribute("style", "background:green;")
+      b = c - 1
+    }
+  }
+ 
+ 
+ 
+ else if (b >= 84 && b <= 97) {
+    let c = b
+    b -= 84
+    fle6.item(b).setAttribute("style", "background:black;");
+  
+    b--
+    if (c == 84) {
+      b = 97
+      fle6.item(13).setAttribute("style", "background:green;")
+    }
+    else {
+      fle6.item(b).setAttribute("style", "background:green;")
+      b = c - 1
+    }
+  }
+
+}
+
+  let a = Math.ceil(Math.random() * div.length)
+  div.item(a).setAttribute("style", "background:red;")
+function redd(){
+let a=Math.floor(Math.random()*div.length+1)
+  div.item(a).setAttribute("style","background:red;")
+}
+
+
+
+function reset(){
+  
+  for(let i=0; i<div.length;i++){
+    div.item(i).style.backgroundColor="black"
+  }
+
+}
+
+function gameover(){
+  let flexd=document.querySelectorAll(".flex")
+let bz=[]
+for(let i=0;i<7;i++){
+for(let j=0;j<14;j++){
+  
+let l=flexd.item(i).children.item(j)
+if(l.style.backgroundColor=="red"){
+  bz.push("1")
+}
+}
+}
+console.log(bz.length)
+if(bz.length>30){
+  flexd.item(0).children.item(1).style.backgroundColor="red"
+  setInterval(redd,0.1)
+
+  document.getElementById("over").innerText="GAME OVER"
+  
+}
+
+}
+
+function red(){
+  setInterval(redd,1000)
+  document.querySelector("body").setAttribute("class","sty")
+  setInterval(gameover,100)
+  let p=event.target
+ p.style.backgroundColor="red"
+ p.style.color="white"
+
+}
+
+</script>
+
+
+ </body>
+</html>
